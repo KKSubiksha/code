@@ -19,7 +19,7 @@ const OrderForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/orders', order);
+      await axios.post('http://localhost:3000/orders', order);
       alert('Order added successfully!');
     } catch (error) {
       console.error('Error adding order:', error);
@@ -34,7 +34,7 @@ const OrderForm = () => {
         <label>Order ID:</label>
         <input type="text" name="orderId" value={order.orderId} onChange={handleChange} />
         {/* Add other input fields for customerName, orderDate, itemsOrdered, totalAmount, status */}
-        <button type="Add">Submit</button>
+        <button type="submit">Submit</button> {/* Changed button type to submit */}
       </form>
     </div>
   );
